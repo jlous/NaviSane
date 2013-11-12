@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        NaviSane
-// @version     1.0
+// @version     1.1
 // @namespace   https://github.com/jlous/NaviSane
 // @homepage    https://github.com/jlous/NaviSane
 // @downloadURL https://github.com/jlous/NaviSane/raw/master/NaviSane.tamper.js
