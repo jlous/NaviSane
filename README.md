@@ -1,4 +1,13 @@
 NaviSane
 ========
 
-Userscript med GUI-tweaks for timeføring i NaviWeb
+GUI-tweaks for timeføring i NaviWeb
+
+Installering:
+I Chrome, installer plugin "TamperMonkey" og legg inn skriptet der.
+
+Features:
+* Dato i kolonneheadere
+* Summer havner rett under tilhørende celler
+* Knapper for neste/forrige periode
+* Lesbar overskrift for perioden
