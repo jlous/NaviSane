@@ -1,12 +1,13 @@
 // ==UserScript==
-// @name       NaviSane
-// @namespace  https://github.com/jlous/NaviSane
-// @homepage   https://github.com/jlous/NaviSane	
-// @version    1.0
-// @description  GUI-tweaks for timeføring
-// @match      https://naviwep.steria.no/*
-// @copyright  2013, Joachim Lous
-// @require    http://code.jquery.com/jquery-1.10.1.min.js
+// @name        NaviSane
+// @version     1.0
+// @namespace   https://github.com/jlous/NaviSane
+// @homepage    https://github.com/jlous/NaviSane
+// @downloadURL https://github.com/jlous/NaviSane/raw/master/NaviSane.tamper.js
+// @copyright   2013, Joachim Lous
+// @description GUI-tweaks for timeføring
+// @match       https://naviwep.steria.no/*
+// @require     http://code.jquery.com/jquery-1.10.1.min.js
 // ==/UserScript==
 
 function dump(o){
