@@ -10,19 +10,6 @@
 // @require     http://code.jquery.com/jquery-1.10.1.min.js
 // ==/UserScript==
 
-function dump(o){
-    result ="";
-    for (key in o){
-        value = o[key];
-        result += key + ": " + value; 
-        if (value instanceof Element){
-            result += "(id:"+value.id+")";
-        }       
-        result += "\n";
-    }
-    return result;
-}
-
 function saneColumnHeaders(){
     monthName = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     $("a[title^='Date']" ).each(function(){
