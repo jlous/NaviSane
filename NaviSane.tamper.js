@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name        NaviSane
-// @version     1.1
+// @version     1.2
 // @namespace   https://github.com/jlous/NaviSane
 // @homepage    https://github.com/jlous/NaviSane
 // @downloadURL https://github.com/jlous/NaviSane/raw/master/NaviSane.tamper.js
 // @copyright   2013, Joachim Lous
 // @description GUI-tweaks for timeføring
-// @match       https://naviwep.steria.no/*
+// @match       https://naviwep.steria.no/NaviWEB/timereg_direct.aspx
 // @require     http://code.jquery.com/jquery-1.10.1.min.js
 // ==/UserScript==
 
@@ -54,9 +54,10 @@ function sanePeriodNavigation(){
 function sanePeriodHeader(){
     headerSpan = $("#ctl00_ContentPlaceHolder1_LBL_CurrentPeriod");
     oldTitle = headerSpan.text();
-    dateRange = oldTitle.substring(0, 23);
-    weekNo = oldTitle.substring(29, 31);
-    weekPart = oldTitle.substring(37, 38);
+    groups = /^(\d\d\.\d\d\.\d\d\d\d - \d\d\.\d\d\.\d\d\d\d) .Week(\d\d?).\d\d\d\d ?(\d?)/.exec(oldTitle);
+    dateRange = groups[1];
+    weekNo = groups[2];
+    weekPart = groups[3];
     weekSep = weekPart.length>0 ? "." : ""; 
     newText = "<b>Week " + weekNo + weekSep + weekPart + "</b> &nbsp; <span style='color:silver;font-size:smaller'>" + dateRange + "</span>";
     headerSpan.html(newText);
@@ -85,6 +86,3 @@ function initPage(){
 
 initPage();
 initPeriod();
-
-
-
