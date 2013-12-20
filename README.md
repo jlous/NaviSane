@@ -4,7 +4,7 @@ NaviSane
 GUI-tweaks for timeføring i NaviWeb
 
 Installering:
-I Chrome, installer plugin "TamperMonkey" og legg inn skriptet der.
+I Chrome, installer plugin "TamperMonkey" og legg inn skriptet NaviSane.tamper.js der.
 
 Features:
 * Dato i kolonneheadere
