@@ -10,4 +10,4 @@ Features:
 * Dato i kolonneheadere
 * Summer havner rett under tilhørende celler
 * Knapper for neste/forrige periode
-* Lesbar overskrift for perioden
+* Mer lesbar overskrift for perioden
