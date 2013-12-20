@@ -5,10 +5,8 @@ GUI-tweaks for timeføring i NaviWeb
 
 Installering:
 * I Chrome, installer plugin "TamperMonkey"
-* Åpne TamperMonkey (nytt ikon til høyre for addressefeltet)
-* Trykk på "nytt skript"-taben (ark med grønt plusstegn på)
-* Lim inn innholdet av NaviSane.tamper.js
-* Trykk på lagre-ikonet
+* På github, gå til NaviSane.tamper.js
+* Trykk på "Raw", og TamperMonkey vil tilby å installere
 
 Features:
 * Dato i kolonneheadere
