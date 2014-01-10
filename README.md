@@ -13,3 +13,4 @@ Features:
 * Sum havner rett under tilhørende celler
 * Knapper for neste/forrige periode
 * Mer lesbar overskrift for perioden
+* Bredere celler - plass til 2 desimaler
