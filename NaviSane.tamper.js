@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        NaviSane
-// @version     1.2
+// @version     1.3
 // @namespace   https://github.com/jlous/NaviSane
 // @homepage    https://github.com/jlous/NaviSane
 // @downloadURL https://github.com/jlous/NaviSane/raw/master/NaviSane.tamper.js
@@ -23,6 +23,18 @@ function saneColumnHeaders(){
 
 function saneCellAlignment(){
     $('span.riSingle').css('width','auto');
+}
+
+function sanePeriodHeader(){
+    headerSpan = $("#ctl00_ContentPlaceHolder1_LBL_CurrentPeriod");
+    oldTitle = headerSpan.text();
+    groups = /^(\d\d\.\d\d\.\d\d\d\d - \d\d\.\d\d\.\d\d\d\d) .Week(\d\d?).\d\d\d\d ?(\d?)/.exec(oldTitle);
+    dateRange = groups[1];
+    weekNo = groups[2];
+    weekPart = groups[3];
+    weekSep = weekPart.length>0 ? "." : ""; 
+    newText = "<b>Week " + weekNo + weekSep + weekPart + "</b> &nbsp; <span style='color:silver;font-size:smaller'>" + dateRange + "</span>";
+    headerSpan.html(newText);
 }
 
 function currentPeriod(){
@@ -51,32 +63,25 @@ function sanePeriodNavigation(){
     } );
 }
 
-function sanePeriodHeader(){
-    headerSpan = $("#ctl00_ContentPlaceHolder1_LBL_CurrentPeriod");
-    oldTitle = headerSpan.text();
-    groups = /^(\d\d\.\d\d\.\d\d\d\d - \d\d\.\d\d\.\d\d\d\d) .Week(\d\d?).\d\d\d\d ?(\d?)/.exec(oldTitle);
-    dateRange = groups[1];
-    weekNo = groups[2];
-    weekPart = groups[3];
-    weekSep = weekPart.length>0 ? "." : ""; 
-    newText = "<b>Week " + weekNo + weekSep + weekPart + "</b> &nbsp; <span style='color:silver;font-size:smaller'>" + dateRange + "</span>";
-    headerSpan.html(newText);
+function saneCellWidths(){
+	$("head").append("<style>.myclass { width: 40px !important; }</style>");
 }
+
+// TODO:
+// zebraStripes()
+// likeYesterdayShortcut()
+// saneTabbingOrder()
+// saneArrowKeys()
 
 function initPeriod(){
     saneColumnHeaders();
     saneCellAlignment();
     sanePeriodHeader();
-
-    // TODO:
-    // zebraStripes();
-    // likeYesterdayShortcut();
-    // saneTabbingOrder();
-    // saneArrowKeys()
 }
 
 function initPage(){
     sanePeriodNavigation();
+    saneCellWidths();
     $(".CurrentPeriod").on("DOMNodeInserted", function(e){
         if (e.target.id == "ctl00_ContentPlaceHolder1_LBL_Approved"){
         	initPeriod();
@@ -86,3 +91,4 @@ function initPage(){
 
 initPage();
 initPeriod();
+
