@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        NaviSane
-// @version     1.4
+// @version     1.5
 // @namespace   https://github.com/jlous/NaviSane
 // @homepage    https://github.com/jlous/NaviSane
 // @downloadURL https://github.com/jlous/NaviSane/raw/master/NaviSane.tamper.js
@@ -67,6 +67,12 @@ function saneCellWidths(){
 	$("head").append("<style>.myclass { width: 40px !important; }</style>");
 }
 
+function andKillThoseEffingMenuAnimations(){
+    Telerik.Web.UI.AnimationSettings.prototype.get_type = function(){return 0;}
+    Telerik.Web.UI.AnimationSettings.prototype.get_duration = function(){return 0;}
+    Telerik.Web.UI.RadMenu.prototype.get_collapseDelay = function(){return 0;}
+}    
+
 // TODO:
 // zebraStripes()
 // likeYesterdayShortcut()
@@ -79,9 +85,7 @@ function initPeriod(){
     sanePeriodHeader();
 }
 
-function initPage(){
-    sanePeriodNavigation();
-    saneCellWidths();
+function installPeriodChangeListener(){
     $(".CurrentPeriod").on("DOMNodeInserted", function(e){
         if (e.target.id == "ctl00_ContentPlaceHolder1_LBL_Approved"){
 			initPeriod();
@@ -89,6 +93,12 @@ function initPage(){
     });
 }
 
-initPage();
-initPeriod();
+function initPage(){
+    initPeriod();
+    installPeriodChangeListener();
+    sanePeriodNavigation();
+    saneCellWidths();
+    andKillThoseEffingMenuAnimations();
+}
 
+initPage();
