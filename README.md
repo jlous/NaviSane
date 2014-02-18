@@ -3,14 +3,17 @@ NaviSane
 
 GUI-tweaks for timeføring i NaviWeb
 
-Installering:
+Installering
+------------
 * I Chrome, installer plugin "TamperMonkey"
 * På github, gå til NaviSane.tamper.js
 * Trykk på "Raw", og TamperMonkey vil tilby å installere
 
-Features:
+Features
+--------
+* **NY**: Kjappe menyer, uten animasjon og forsinkelser
+* Knapper for neste/forrige periode
+* Mer leselig periode-overskrift
 * Dato i kolonneheadere
 * Sum havner rett under tilhørende celler
-* Knapper for neste/forrige periode
-* Mer lesbar overskrift for perioden
-* Bredere celler - plass til 2 desimaler
+* Celler med plass til 2 desimaler
